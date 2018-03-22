@@ -8,7 +8,7 @@ This library provides a way to create a jetty-context which is secured via ldap-
 
 ```scala
 //build.sbt
-libraryDependencies += "de.otto" % "jetty-ldap" % "0.0.1"
+libraryDependencies += "de.otto" % "jetty-ldap" % "0.1.0"
 ```
 
 ## Configuration
