@@ -23,6 +23,7 @@ libraryDependencies ++= Seq(
 )
 
 releasePublishArtifactsAction := PgpKeys.publishSigned.value
+useGpg := true
 
 publishMavenStyle := true
 
