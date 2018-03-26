@@ -40,6 +40,7 @@ publishTo := {
 import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 
 // From: https://github.com/xerial/sbt-sonatype#using-with-sbt-release-plugin
+releaseCrossBuild := true
 releaseProcess := Seq[ReleaseStep](
 	checkSnapshotDependencies,
 	inquireVersions,
