@@ -1,15 +1,14 @@
-name := "jetty-ldap"
+lazy val root = (project in file(".")).
+	settings(
+		name := "jetty-ldap",
+		organization := "de.otto",
+		licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
 
-organization := "de.otto"
+		homepage := Some(url("https://dev.otto.de/")),
+		sbtPlugin := true
+	)
 
-licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
-
-homepage := Some(url("https://dev.otto.de/"))
-
-scalaVersion := "2.11.12"
-
-conflictManager := sbt.ConflictManager.latestRevision
-sbtPlugin := true
+scalaVersion in ThisBuild := "2.12.5"
 
 libraryDependencies ++= Seq(
 	"org.eclipse.jetty" % "jetty-servlet" % "9.4.8.v20171121",
@@ -26,6 +25,9 @@ releasePublishArtifactsAction := PgpKeys.publishSigned.value
 useGpg := true
 
 publishMavenStyle := true
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
 
 publishTo := {
 	val nexus = "https://oss.sonatype.org/"
@@ -36,10 +38,10 @@ publishTo := {
 	}
 }
 
-// From: https://github.com/xerial/sbt-sonatype#using-with-sbt-release-plugin
-import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
+crossSbtVersions := Vector("0.13.17", "1.1.0")
 
 // From: https://github.com/xerial/sbt-sonatype#using-with-sbt-release-plugin
+import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 releaseCrossBuild := true
 releaseProcess := Seq[ReleaseStep](
 	checkSnapshotDependencies,
@@ -56,17 +58,15 @@ releaseProcess := Seq[ReleaseStep](
 	pushChanges
 )
 
-publishArtifact in Test := false
-
-pomIncludeRepository := { _ => false }
-
 pomExtra := (
 	<developers>
 		<developer>
 			<id>fr3dch3n</id>
 			<name>Frederik Mars</name>
 			<email>frederik.mars@otto.de</email>
-			<organization>Otto (GmbH &amp; Co KG)</organization>
+			<organization>Otto (GmbH
+				&amp;
+				Co KG)</organization>
 			<organizationUrl>https://www.otto.de</organizationUrl>
 		</developer>
 	</developers>
