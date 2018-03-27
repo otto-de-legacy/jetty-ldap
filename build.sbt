@@ -4,8 +4,7 @@ lazy val root = (project in file(".")).
 		organization := "de.otto",
 		licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
 
-		homepage := Some(url("https://dev.otto.de/")),
-		sbtPlugin := true
+		homepage := Some(url("https://dev.otto.de/"))
 	)
 
 scalaVersion in ThisBuild := "2.12.5"
