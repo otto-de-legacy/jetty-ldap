@@ -1,5 +1,6 @@
-# Jetty LDAP
-
+Jetty LDAP
+==========
+[![Build Status](https://travis-ci.org/otto-de/jetty-ldap.svg?branch=master)](https://travis-ci.org/otto-de/jetty-ldap)
 > Scala-library to enable LDAP-Authorization for Jetty
 
 This library provides a way to create a jetty-context which is secured via ldap-login.
