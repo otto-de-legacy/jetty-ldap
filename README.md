@@ -58,10 +58,14 @@ jetty.start()
 
 Have a look at our developer-blog: [dev.otto.de](https://dev.otto.de/)
 
+## Initial Contributors
+
+Frederik Mars
+
 ## Copyright
 
 Copyright [Otto (GmbH & Co KG)](http://www.otto.de)
 
 ## License
 
-[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
+Released under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
